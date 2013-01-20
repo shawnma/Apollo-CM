@@ -11,6 +11,9 @@
 
 package com.andrew.apollo.utils;
 
+import java.lang.ref.WeakReference;
+import java.util.List;
+
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -46,10 +49,9 @@ import com.andrew.apollo.cache.ImageFetcher;
 import com.andrew.apollo.ui.activities.ShortcutActivity;
 import com.andrew.apollo.widgets.ColorPickerView;
 import com.andrew.apollo.widgets.ColorSchemeDialog;
-import com.devspark.appmsg.Crouton;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * Mostly general and UI helpers.
@@ -378,14 +380,14 @@ public final class ApolloUtils {
             context.sendBroadcast(intent);
             Crouton.makeText(context,
                     displayName + " " + context.getString(R.string.pinned_to_home_screen),
-                    Crouton.STYLE_CONFIRM).show();
+                    Style.CONFIRM).show();
         } catch (final Exception e) {
             Log.e("ApolloUtils", "createShortcutIntent - " + e);
             Crouton.makeText(
                     context,
                     displayName + " "
                             + context.getString(R.string.could_not_be_pinned_to_home_screen),
-                    Crouton.STYLE_ALERT).show();
+                    Style.ALERT).show();
         }
     }
 

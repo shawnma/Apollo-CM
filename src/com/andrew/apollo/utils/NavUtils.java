@@ -27,7 +27,9 @@ import com.andrew.apollo.ui.activities.HomeActivity;
 import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.ui.activities.SearchActivity;
 import com.andrew.apollo.ui.activities.SettingsActivity;
-import com.devspark.appmsg.Crouton;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * Various navigation helpers.
@@ -95,7 +97,7 @@ public final class NavUtils {
             MusicUtils.startBackgroundService(context);
         } catch (final ActivityNotFoundException e) {
             Crouton.makeText(context, context.getString(R.string.no_effects_for_you),
-                    Crouton.STYLE_ALERT);
+                    Style.ALERT);
         }
     }
 

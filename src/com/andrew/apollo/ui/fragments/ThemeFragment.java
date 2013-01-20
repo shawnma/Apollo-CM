@@ -11,6 +11,8 @@
 
 package com.andrew.apollo.ui.fragments;
 
+import java.util.List;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -38,9 +40,9 @@ import com.andrew.apollo.R;
 import com.andrew.apollo.recycler.RecycleHolder;
 import com.andrew.apollo.ui.MusicHolder;
 import com.andrew.apollo.utils.ThemeUtils;
-import com.devspark.appmsg.Crouton;
 
-import java.util.List;
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * Used to show all of the available themes on a user's device.
@@ -194,7 +196,7 @@ public class ThemeFragment extends SherlockFragment implements OnItemClickListen
             final long id) {
         mTheme.setThemePackageName(mValues[position]);
         Crouton.makeText(getSherlockActivity(),
-                mEntries[position] + " " + getString(R.string.theme_set), Crouton.STYLE_CONFIRM)
+                mEntries[position] + " " + getString(R.string.theme_set), Style.CONFIRM)
                 .show();
     }
 
